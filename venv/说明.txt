@@ -1,0 +1,51 @@
+一、环境激活
+
+1.myproject目录下cmd下执行> venv\Scripts\activate
+
+2.
+$ set FLASK_APP=st.py
+$ set FLASK_ENV=development
+$ flask run
+
+3.cmd操作mysql数据库步骤
+
+显示所有数据库
+show databases;
+
+选择使用mysql这个数据库
+use mysql;
+
+显示mysql库下的所有表
+show tables;
+
+创建学生表
+
+CREATE TABLE students (
+  sno VARCHAR(20) not null,
+  sname VARCHAR(20) not null,
+  ssex VARCHAR(20) not null DEFAULT 'female',
+  sbirthday DATE,
+  sclass VARCHAR(20)
+  );
+
+学生表中插入2条数据(在sqlyog中操作命令行)
+INSERT INTO students (sno,sname,ssex,sbirthday,sclass) VALUES('001','曾华','男','1977-09-01','一班');
+
+INSERT INTO students (sno,sname,ssex,sbirthday,sclass) VALUES('002','匡明','男','1975-10-02','二班');
+
+INSERT INTO students (sno,sname,ssex,sbirthday,sclass) VALUES('003','王丽','女','1976-01-23','三班');
+
+修改数据库的字段类型（sno的字符串修改为int）
+
+ALTER TABLE students MODIFY COLUMN sno INT;
+
+修改sno字段为非空
+ALTER TABLE students MODIFY sno INT NOT NULL;
+
+显示表结构字段信息
+
+show columns from students;
+
+
+
+
